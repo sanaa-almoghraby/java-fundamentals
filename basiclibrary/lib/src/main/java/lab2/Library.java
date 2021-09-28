@@ -4,21 +4,31 @@
 package lab2;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Library {
     public boolean someLibraryMethod() {
         return true;
     }
 
-    public static void roll(int n) {
+    public static int[] roll(int n) {
         int[] result = new int[n];
-        ArrayList<Integer> number = new ArrayList<>();
+//        ArrayList<Integer> number = new ArrayList<>();
         for (int i = 0; i < result.length; i++) {
             int random = (int) Math.ceil(Math.random() * 6);
-            number.add(random);
-
+//            number.add(random);
+            result[i]=random;
         }
-        System.out.println(number);
+        System.out.println(Arrays.toString(result)); //print array one method
+
+//            print array second method
+            for (int i = 0; i < n; i++){
+                System.out.print(result[i] + ", ");
+            }
+
+
+        System.out.println("\n");
+            return result ;
     }
 
     public static boolean containsDuplicates(int[] arr) {
@@ -43,7 +53,7 @@ public class Library {
     }
 
 
-    public static double arraysLowestAav(int[][] arr) {
+    public static int[] arraysLowestAav(int[][] arr) {
 
 //        ArrayList <Double> avarg = new ArrayList<>();
         double[] avarg = new double[arr.length];
@@ -59,14 +69,16 @@ public class Library {
             avarg[i] = sum / arr[i].length;
         }
         finalAv=avarg[0];
+        int selectedArr=0;
         for (int i = 1; i < avarg.length; i++) {
 
             if (avarg[i] < finalAv) {
                 finalAv = avarg[i];
+                selectedArr=i;
             }
 
         }
-        return finalAv;
+        return arr[selectedArr];
     }
 
 

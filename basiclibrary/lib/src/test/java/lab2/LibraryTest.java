@@ -8,29 +8,30 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
     Library testfun = new Library();
-    @Test void someLibraryMethodReturnsTrue() {
+    @Test
+    void someLibraryMethodReturnsTrue() {
         Library classUnderTest = new Library();
-        assertTrue(classUnderTest.someLibraryMethod(), "someLibraryMethod should return 'true'");
+        assertTrue(classUnderTest.someLibraryMethod(), "should return 'true'");
     }
 
-    //        @Test
-//    public void testroll() {
-//
-//        int numRolls = 4;
-//        assertEquals("array length is " + numRolls, numRolls, fun.roll(numRolls));
-//    }
+            @Test
+    public void testroll() {
+
+        int numRolls = 4;
+        assertEquals(numRolls,testfun.roll(numRolls).length,"correct");
+    }
     @Test
     public void testAverage(){
         int [] arr ={1,1,1};
-        int av= 1;
-        assertEquals( av, testfun.Average(arr));
+        int avreg= 1;
+        assertEquals( avreg, testfun.Average(arr));
     }
 
     @Test
     public void testContainsDuplicate() {
         int[] testArr = new int[]{1, 2, 3, 4, 4, 5};
 
-        assertTrue(testfun.containsDuplicates(testArr), "someLibraryMethod should return 'true'");
+        assertTrue(testfun.containsDuplicates(testArr), " should return 'true'");
 
     }
     @Test
@@ -41,6 +42,6 @@ class LibraryTest {
                 {55, 54, 60, 53, 59, 57, 61}, // 57.0
                 {65, 56, 55, 52, 55, 62, 57} // 57.4285714286
         };
-        assertTrue(Library.arraysLowestAav(testArr)==57, "lowest average is arr at index 2");
+        assertArrayEquals(Library.arraysLowestAav(testArr), testArr[2],"lowest average is arr at index 2");
     }
 }
