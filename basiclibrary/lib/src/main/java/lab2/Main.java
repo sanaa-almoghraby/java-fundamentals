@@ -1,5 +1,7 @@
 package lab2;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -15,7 +17,7 @@ public class Main {
         demo.roll(5);
         System.out.println(demo.containsDuplicates(arr));
         System.out.println(demo.Average(arr));
-        System.out.println(demo.arraysLowestAav(weeklyMonthTemperatures));
+        System.out.println(Arrays.toString(demo.arraysLowestAav(weeklyMonthTemperatures)) );
     }
 
 
