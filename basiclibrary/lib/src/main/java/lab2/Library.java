@@ -3,8 +3,7 @@
  */
 package lab2;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 
 public class Library {
     public boolean someLibraryMethod() {
@@ -17,18 +16,18 @@ public class Library {
         for (int i = 0; i < result.length; i++) {
             int random = (int) Math.ceil(Math.random() * 6);
 //            number.add(random);
-            result[i]=random;
+            result[i] = random;
         }
         System.out.println(Arrays.toString(result)); //print array one method
 
 //            print array second method
-            for (int i = 0; i < n; i++){
-                System.out.print(result[i] + ", ");
-            }
+        for (int i = 0; i < n; i++) {
+            System.out.print(result[i] + ", ");
+        }
 
 
         System.out.println("\n");
-            return result ;
+        return result;
     }
 
     public static boolean containsDuplicates(int[] arr) {
@@ -68,13 +67,13 @@ public class Library {
             }
             avarg[i] = sum / arr[i].length;
         }
-        finalAv=avarg[0];
-        int selectedArr=0;
+        finalAv = avarg[0];
+        int selectedArr = 0;
         for (int i = 1; i < avarg.length; i++) {
 
             if (avarg[i] < finalAv) {
                 finalAv = avarg[i];
-                selectedArr=i;
+                selectedArr = i;
             }
 
         }
@@ -82,4 +81,75 @@ public class Library {
     }
 
 
+//    public  String weatherData(int[][] weatherArr) {
+//            HashSet<Integer> weatherSet = new HashSet<>();
+//
+//            for (int[] ints : weatherArr) {
+//                for (int day : ints) {
+//                    weatherSet.add(day);
+//                }
+//            }
+//
+//            if (weatherSet.isEmpty()) return "0";
+//
+//            int min = Collections.min(weatherSet);
+//            int max = Collections.max(weatherSet);
+//            StringBuilder response = new StringBuilder();
+//            response.append("High: ").append(max).append("\n");
+//            response.append("Low: ").append(min).append("\n");
+//
+//            for (int i = min; i < max; i++) {
+//                if (!weatherSet.contains(i)) response.append("Never saw temperature: ").append(i).append("\n");
+//            }
+//
+//            return response.toString();
+//        }
+
+
+    public static String weatherData(int[][] data) {
+        HashSet<Integer> uniqueTempData = new HashSet<>();
+        for (int i = 0; i < data.length; i++) {
+            for (Integer temp : data[i]) {
+                uniqueTempData.add(temp);
+            }
+        }
+//        System.out.println("Low Temperature " + Collections.min(uniqueTempData));
+        String lowTemp = "Low Temperature " + Collections.min(uniqueTempData);
+//        System.out.println("High Temperature " + Collections.max(uniqueTempData));
+        String highTemp = "\nHigh Temperature " + Collections.max(uniqueTempData);
+        String neverSaw = "";
+        for (int i = Collections.min(uniqueTempData); i < Collections.max(uniqueTempData); i++) {
+            if (!uniqueTempData.contains(i)) {
+//                System.out.println("Never saw temperature: " + i);
+                neverSaw += "\nNever saw temperature: " + i;
+
+            }
+        }
+        return lowTemp + highTemp + neverSaw;
+
+    }
+
+
+    public static String tally(List<String> votes) {
+        if (votes.isEmpty()) return "0";
+
+        HashSet<String> votedItems = new HashSet<>();
+        votedItems.addAll(votes);
+
+        int numVotes = 0;
+        String winner = null;
+
+        for (String item : votedItems) {
+            int count = Collections.frequency(votes, item);
+            if (numVotes < count) {
+                numVotes = count;
+//                winner = String.format("%s received the most votes!", item);
+                winner = "\n" + item + "received the most votes";
+            }
+
+            return winner;
+        }
+        return winner;
+
+    }
 }
