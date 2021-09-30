@@ -4,11 +4,20 @@
 package lab3;
 
 import org.junit.jupiter.api.Test;
+
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
     @Test void appHasAGreeting() {
         App classUnderTest = new App();
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+    }
+
+    @Test void noErrorTester(){
+        Path filePath = Paths.get("app/src/main/resources/empty.js");
+        assertEquals("", App.ReadFiler(filePath),"it should return empty string");
     }
 }
