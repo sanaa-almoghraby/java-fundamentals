@@ -7,6 +7,13 @@ Calculating Averages
 Array of arrays
 
 
+# Lab: 06 - Inheritance and Interfaces# Write a method for :
+  Create a class to represent a Restaurant. 
+  Create a class to represent a Review
+  A Review should be about a single Restaurant
+  Add an instance method addReview to your Restaurant class.
+
+
 ## Lab: 03 - Maps and File I/O
 
 1. Analyzing Weather Data
@@ -18,3 +25,4 @@ Array of arrays
   Don’t show an error if the line ends with an opening curly brace {
   Don’t show an error if the line ends with an closing curly brace }
   Don’t show an error if the line contains if or else
+
