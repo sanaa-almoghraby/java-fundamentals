@@ -13,7 +13,7 @@ class LibraryTest {
     }
     @Test
     void Restaurant(){
-        Restaurant testRest =new Restaurant("kfc","$",2);
+        Restaurant testRest =new Restaurant("kfc","$");
 
         assertEquals("Restaurant{name='kfc', num=2, priceCategory='$'}",testRest.toString(),"ssssssssss");
     }
@@ -23,4 +23,11 @@ class LibraryTest {
 
         assertEquals("Review{body='good', author='sanaa', numStar=5}",testRev.toString(),"ssssssssss");
     }
+    @Test
+    void Shop(){
+        Shop testshop=new Shop("good","sanaa","$");
+
+        assertEquals("Shop{name='good', description='sanaa', dollarsign=5}",testshop.toString(),"ssssssssss");
+    }
+
 }

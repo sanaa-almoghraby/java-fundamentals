@@ -3,7 +3,7 @@ package lab6;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Restaurant {
+public class Restaurant implements UserReriw {
 
     private String name;
     private int numStar;
