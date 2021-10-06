@@ -13,15 +13,27 @@ public class Library {
 
         Restaurant newRest = new Restaurant("sanaa", "$");
         System.out.println(newRest);
+        Shop shop= new Shop("ssss","ddd","$");
+        Theater theater = new Theater("ASAC");
+
+        newRest.addRive(new Review("good","sss",1));
+
+        theater.addMovie("not good");
+
+        shop.addRive(new Review("not good","sanaa",1));
 
 
-        Review visitor= new Review("good","sanaa",5);
-        Review visitor1= new Review("good","aaa",5);
-        Review visitor2= new Review("good","dddd",5);
-        newRest.addRive(visitor);
-        newRest.addRive(visitor1);
-        newRest.addRive(visitor2);
+        theater.addReview(new Review("not good","sanaa",1),"ddddd");
+//        Review visitor= new Review("good","sanaa",5);
+//        Review visitor1= new Review("good","aaa",5);
+//        Review visitor2= new Review("good","dddd",5);
+//        newRest.addRive(visitor);
+//        newRest.addRive(visitor1);
+//        newRest.addRive(visitor2);
 
         System.out.println(newRest);
+        System.out.println(shop);
+        System.out.println(theater);
+
     }
 }
