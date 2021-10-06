@@ -29,5 +29,12 @@ class LibraryTest {
 
         assertEquals("Shop{name='good', description='sanaa', dollarsign=5}",testshop.toString(),"ssssssssss");
     }
+    @Test void testTheater(){
+        Theater theater=new Theater("amman");
+        assertEquals("amman",theater.getName());
+
+
+    }
+
 
 }
